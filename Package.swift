@@ -4,23 +4,33 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-kes",
+    name: "SwiftKES",
+    platforms: [
+        .iOS(.v14),
+        .macOS(.v14),
+        .watchOS(.v7),
+        .tvOS(.v14),
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "swift-kes",
-            targets: ["swift-kes"]
+            name: "SwiftKES",
+            targets: ["SwiftKES"]
         ),
     ],
+    dependencies: [
+        .package(url: "https://github.com/Kingpin-Apps/swift-ncal.git", .upToNextMinor(from: "0.2.1")),
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "swift-kes"
+            name: "SwiftKES",
+            dependencies: [
+                .product(name: "SwiftNcal", package: "swift-ncal"),
+            ]
         ),
         .testTarget(
-            name: "swift-kesTests",
-            dependencies: ["swift-kes"]
+            name: "SwiftKESTests",
+            dependencies: ["SwiftKES"],
+            resources: [.copy("Resources")]
         ),
     ]
 )
