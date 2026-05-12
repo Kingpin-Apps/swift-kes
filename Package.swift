@@ -19,12 +19,14 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Kingpin-Apps/swift-ncal.git", .upToNextMinor(from: "0.2.1")),
+        .package(url: "https://github.com/attaswift/BigInt.git", .upToNextMinor(from: "5.3.0")),
     ],
     targets: [
         .target(
             name: "SwiftKES",
             dependencies: [
                 .product(name: "SwiftNcal", package: "swift-ncal"),
+                .product(name: "BigInt", package: "BigInt"),
             ]
         ),
         .testTarget(
