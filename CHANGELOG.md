@@ -1,3 +1,9 @@
+## 0.2.1 (2026-05-27)
+
+### Fix
+
+- update swift-ncal for improve compatibility
+
 ## 0.2.0 (2026-05-26)
 
 ### Feat
