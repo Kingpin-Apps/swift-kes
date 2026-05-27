@@ -1,3 +1,9 @@
+## 0.2.0 (2026-05-26)
+
+### Feat
+
+- widen swift-ncal range to allow 0.3.x
+
 ## 0.1.2 (2026-05-14)
 
 ### Fix
