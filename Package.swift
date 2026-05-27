@@ -18,7 +18,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/Kingpin-Apps/swift-ncal.git", .upToNextMinor(from: "0.2.3")),
+        .package(url: "https://github.com/Kingpin-Apps/swift-ncal.git", .upToNextMajor(from: "0.2.3")),
         .package(url: "https://github.com/attaswift/BigInt.git", .upToNextMinor(from: "5.3.0")),
     ],
     targets: [
