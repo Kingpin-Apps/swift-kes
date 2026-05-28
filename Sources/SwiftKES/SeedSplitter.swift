@@ -1,5 +1,5 @@
 import Foundation
-import SwiftNcal
+import SwiftNaCl
 
 /// Deterministic seed splitting using Blake2b with domain separation.
 ///

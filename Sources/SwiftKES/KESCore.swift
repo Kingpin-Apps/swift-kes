@@ -1,5 +1,5 @@
 import Foundation
-import SwiftNcal
+import SwiftNaCl
 
 /// Core recursive KES operations: key generation, signing, verification, and
 /// key evolution for both standard and compact variants.

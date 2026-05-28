@@ -1,5 +1,5 @@
 import Foundation
-import SwiftNcal
+import SwiftNaCl
 
 /// Public key combination via Blake2b hashing.
 ///
