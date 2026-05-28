@@ -1,3 +1,9 @@
+## 1.0.0 (2026-05-27)
+
+### Feat
+
+- migrate to SwiftNaCl 1.0.0 (renamed module + repo)
+
 ## 0.2.1 (2026-05-27)
 
 ### Fix
