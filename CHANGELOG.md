@@ -1,7 +1,8 @@
-## 1.0.1 (2026-05-28)
+## 1.0.2 (2026-09-22)
 
 ### Fix
 
+- allow BigInt 6.x and refresh dependency pins
 - update BigInt
 
 ## 1.0.0 (2026-05-27)
