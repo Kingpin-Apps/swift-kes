@@ -1,5 +1,5 @@
 {
-  "originHash" : "3b2ff31c3d9c8e6c2f190e2de38c0feb9da4d6bd1ea710479fcb53da05ae8894",
+  "originHash" : "103560a4333a8bbe18e0de4e1c97401a28e534eb8607fa992895ccfe0dfc6f86",
   "pins" : [
     {
       "identity" : "base32",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/attaswift/BigInt.git",
       "state" : {
-        "revision" : "e07e00fa1fd435143a2dcf8b7eec9a7710b2fdfe",
-        "version" : "5.7.0"
+        "revision" : "63feef7820abb1a8fb08587d7da56bb0b7db8751",
+        "version" : "6.0.1"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Kingpin-Apps/swift-nacl.git",
       "state" : {
-        "revision" : "23df3eed6c4a9ac8f906260253604fdb74f7ed7f",
-        "version" : "1.0.1"
+        "revision" : "03f8a9e2a7626fdc56f100da78f101fe05002298",
+        "version" : "1.0.3"
       }
     }
   ],

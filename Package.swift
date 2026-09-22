@@ -19,7 +19,9 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Kingpin-Apps/swift-nacl.git", from: "1.0.1"),
-        .package(url: "https://github.com/attaswift/BigInt.git", from: "5.7.0"),
+        // BigInt 6.x is source-compatible with 5.7.0; the major bump only raised the
+        // manifest's tools version. Keep 5.x admissible for consumers still on it.
+        .package(url: "https://github.com/attaswift/BigInt.git", "5.7.0"..<"7.0.0"),
     ],
     targets: [
         .target(
