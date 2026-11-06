@@ -1,3 +1,9 @@
+## 1.0.4 (2026-11-06)
+
+### Fix
+
+- rebase key and signature Data to zero-based storage
+
 ## 1.0.3 (2026-11-06)
 
 ## 1.0.2 (2026-09-22)
