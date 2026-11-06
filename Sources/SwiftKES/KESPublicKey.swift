@@ -21,7 +21,7 @@ public struct KESPublicKey: Equatable, Hashable, Sendable {
                 label: "KES public key"
             )
         }
-        self.bytes = bytes
+        self.bytes = Data(bytes)
     }
 }
 

@@ -47,7 +47,9 @@ public final class KESSecretKey: @unchecked Sendable {
             )
         }
         self.depth = depth
-        self.bytes = bytes
+        // Rebase to a zero-based buffer: layout accessors use absolute offsets, and a
+        // non-zero-based slice would make signing publish stored-seed bytes.
+        self.bytes = Data(bytes)
     }
 
     deinit {

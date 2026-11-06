@@ -36,7 +36,8 @@ public struct KESSignature: Sendable, Equatable {
             )
         }
         self.depth = depth
-        self.bytes = bytes
+        // Rebase to a zero-based buffer: component accessors use absolute offsets.
+        self.bytes = Data(bytes)
     }
 
     // MARK: - Component accessors (depth > 0)
@@ -50,7 +51,7 @@ public struct KESSignature: Sendable, Equatable {
     /// The child (inner) signature bytes.
     public var childSignature: Data {
         precondition(depth > 0)
-        return bytes.prefix(childSigSize)
+        return Data(bytes.prefix(childSigSize))
     }
 
     /// The left (lhs) public key stored in the signature.

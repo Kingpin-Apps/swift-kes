@@ -42,7 +42,8 @@ public struct KESCompactSignature: Sendable, Equatable {
             )
         }
         self.depth = depth
-        self.bytes = bytes
+        // Rebase to a zero-based buffer: component accessors use absolute offsets.
+        self.bytes = Data(bytes)
     }
 
     // MARK: - Depth 0 accessors
