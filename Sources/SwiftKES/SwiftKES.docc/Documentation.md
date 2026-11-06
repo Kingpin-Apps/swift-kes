@@ -14,7 +14,7 @@ This package provides **Sum6KES** (depth 6, supporting 64 signing periods) and i
 - **Sum6KES**: Standard signatures (448 bytes) with full Cardano compatibility
 - **Sum6CompactKES**: Compact signatures (288 bytes) for reduced storage
 - **Secure Memory**: Automatic key material zeroing on deallocation
-- **Swift Concurrency**: All types conform to `Sendable` for safe concurrent use
+- **Swift Concurrency**: All types conform to `Sendable`; key evolution needs a single owner (see <doc:GettingStarted#Thread-Safety>)
 - **Byte-Exact Compatibility**: Validated against Rust and Haskell test vectors
 
 ### How KES Works

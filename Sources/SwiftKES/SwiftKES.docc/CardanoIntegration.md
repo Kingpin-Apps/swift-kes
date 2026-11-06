@@ -154,6 +154,15 @@ let restored = try Sum6KES(secretKeyBytes: rawBytes, period: period)
 
 > Important: This differs from the Rust `kes` crate, which appends a 4-byte period to the key bytes. SwiftKES follows the Cardano node convention of storing raw bytes without the period suffix.
 
+A `cardano-cli` KES `.skey` stores these 608 bytes as a CBOR byte string, so its `cborHex` starts with the 3-byte header `590260`. Strip the header and pass the remaining 608 bytes. A slice such as `cborData.dropFirst(3)` is fine: the key, signature, and public-key initializers copy their input into zero-based storage.
+
+```swift
+let cborData: Data = ...                       // decoded from the .skey cborHex
+let restored = try Sum6KES(secretKeyBytes: cborData.dropFirst(3), period: period)
+```
+
+> Warning: SwiftKES 1.0.3 and earlier indexed a non-zero-based slice incorrectly. Restoring a key from one produced invalid signatures that could expose stored seed bytes. Upgrade to 1.0.4 or later, or pass `Data(slice)` on older versions.
+
 ### Integration with swift-cardano
 
 For full Cardano serialization support including TextEnvelope JSON format (`.skey`/`.vkey` files), CBOR encoding, and operational certificates, use the [swift-cardano](https://github.com/Kingpin-Apps/swift-cardano) package alongside SwiftKES.

@@ -225,6 +225,8 @@ let restored = try Sum6KES(secretKeyBytes: skBytes, period: period)
 
 > Important: The period is **not** embedded in the secret key bytes. You must track and store it separately.
 
+Any `Data` holding exactly 608 bytes is accepted, including a slice of a larger buffer; SwiftKES copies it into its own zero-based storage.
+
 ### Key Sizes Reference
 
 | Component | Size |
@@ -276,7 +278,7 @@ Task {
 }
 ```
 
-> Note: ``KESSecretKey`` is a reference type (`class`) marked `@unchecked Sendable`. While the signing operations are safe, avoid mutating a single ``Sum6KES`` instance from multiple threads simultaneously. Key evolution (`evolve()`) should be called from a single owner.
+> Note: ``KESSecretKey`` is a reference type (`class`) marked `@unchecked Sendable`, and copies of a ``Sum6KES`` or ``Sum6CompactKES`` value share the same underlying secret key. Public keys, signatures, and verification are safe to use concurrently. Signing and evolution are not synchronized: keep each key with a single owner, and never sign on one copy while another copy calls `evolve()`.
 
 ## Next Steps
 

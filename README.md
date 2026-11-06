@@ -12,7 +12,7 @@ SwiftKES implements the **Sum6KES** construction (Sum-composition at depth 6) su
 - **Sum6KES** — Standard signatures (448 bytes) with full Cardano compatibility
 - **Sum6CompactKES** — Compact signatures (288 bytes) for reduced storage
 - **Forward Security** — Secure key zeroing on evolution; old periods become unsignable
-- **Swift Concurrency** — All types are `Sendable` for Swift 6 strict concurrency
+- **Swift Concurrency** — All types are `Sendable` for Swift 6 strict concurrency (sign and evolve each key from a single owner)
 - **Byte-Exact Compatibility** — Validated against Rust test vectors
 
 ## Installation
@@ -114,6 +114,8 @@ let pkBytes = kes.publicKey.bytes // 32 bytes
 // Restore from raw bytes (period must be tracked externally)
 let restored = try Sum6KES(secretKeyBytes: skBytes, period: currentPeriod)
 ```
+
+Any 608-byte `Data` is accepted, including a slice of a larger buffer (for example `cborData.dropFirst(3)` after stripping the `.skey` CBOR header). SwiftKES copies it into its own storage. Versions 1.0.3 and earlier mishandled such slices, so upgrade to 1.0.4+ if you restore keys from sliced buffers.
 
 For Cardano-compatible TextEnvelope JSON serialization, CBOR encoding, and operational certificates, see the [swift-cardano](https://github.com/Kingpin-Apps/swift-cardano) package.
 
