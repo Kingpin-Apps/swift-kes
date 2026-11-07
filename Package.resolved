@@ -1,5 +1,5 @@
 {
-  "originHash" : "ee973ce670d58a3ece9fcc58acaa1a82e612d728bfb8aae5b95a766a9434c795",
+  "originHash" : "ab2a988a865ab831511f4eb0b4de91708c8234daec23e38f7d3d3c794c764c81",
   "pins" : [
     {
       "identity" : "base32",
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Kingpin-Apps/swift-nacl.git",
       "state" : {
-        "revision" : "32aac9e9f00f362a359b198bc76eae4fa95f329f",
-        "version" : "1.1.0"
+        "revision" : "be05b4970ec37295f9a0605ae57a927a37b4feaf",
+        "version" : "2.0.0"
       }
     }
   ],
